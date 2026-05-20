@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Gravity Control Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="glow-bg"></div>
+    <div class="container">
+        <header>
+            <h1>Anti-Gravity <span>Control Center</span></h1>
+            <p>Manage and monitor your anti-gravity nodes in real-time.</p>
+        </header>
+
+        <main>
+            <section class="panel add-item-panel">
+                <h2>Deploy New Node</h2>
+                <form id="add-item-form">
+                    <div class="form-group">
+                        <label for="item-id">Node ID</label>
+                        <input type="number" id="item-id" name="id" required placeholder="e.g., 101">
+                    </div>
+                    <div class="form-group">
+                        <label for="item-name">Node Name</label>
+                        <input type="text" id="item-name" name="name" required placeholder="e.g., Sector 7 Emitter">
+                    </div>
+                    <div class="form-group">
+                        <label for="item-power">Power Level</label>
+                        <input type="number" id="item-power" name="power_level" step="0.1" required placeholder="e.g., 9000.5">
+                    </div>
+                    <div class="form-group">
+                        <label for="item-desc">Description (Optional)</label>
+                        <textarea id="item-desc" name="description" rows="2" placeholder="Function details..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Deploy Node</button>
+                    <div id="form-message" class="message"></div>
+                </form>
+            </section>
+
+            <section class="panel list-items-panel">
+                <div class="panel-header">
+                    <h2>Active Nodes</h2>
+                    <button id="refresh-btn" class="btn-icon" title="Refresh">↻</button>
+                </div>
+                <div id="items-container" class="items-grid">
+                    <!-- Items will be injected here by JS -->
+                    <div class="loading">Initializing connection to gravity net...</div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
