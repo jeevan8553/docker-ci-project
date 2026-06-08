@@ -5,20 +5,19 @@ pipeline {
 
         stage('Check Python') {
             steps {
-                bat 'python --version'
-                bat 'where python'
+                bat '"C:\\Users\\jeeva\\OneDrive\\Documents\\Desktop\\microservice-project\\venv\\Scripts\\python.exe" --version'
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                bat 'python -m pip install -r requirements.txt'
+                bat '"C:\\Users\\jeeva\\OneDrive\\Documents\\Desktop\\microservice-project\\venv\\Scripts\\python.exe" -m pip install -r requirements.txt'
             }
         }
 
         stage('Run Tests') {
             steps {
-                bat 'python -m pytest'
+                bat '"C:\\Users\\jeeva\\OneDrive\\Documents\\Desktop\\microservice-project\\venv\\Scripts\\python.exe" -m pytest'
             }
         }
 
